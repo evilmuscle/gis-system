@@ -74,6 +74,8 @@ const mockLayers: Layer[] = [
   },
 ];
 
+const satelliteBasemapUrl = `${import.meta.env.BASE_URL}satellite_basemap.png`;
+
 export function MapQuery() {
   const { projects } = useData();
   const [layers, setLayers] = useState(mockLayers);
@@ -183,8 +185,6 @@ export function MapQuery() {
     );
   };
 
-  console.log('MapQuery Render. viewDetailProject:', viewDetailProject?.name);
-
   return (
     <>
       <div className="h-full flex bg-white font-sans">
@@ -250,7 +250,7 @@ export function MapQuery() {
           {/* 地图内容 */}
           <div className="w-full h-full relative cursor-crosshair">
             <img
-              src="/satellite_basemap.png"
+              src={satelliteBasemapUrl}
               alt="Satellite Map"
               className="w-full h-full object-cover opacity-90 transition-opacity duration-700"
             />
