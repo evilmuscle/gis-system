@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, Layers, ZoomIn, ZoomOut, Maximize2, Info, MapPin } from 'lucide-react';
+import { Search, Layers, ZoomIn, ZoomOut, Maximize2, MapPin } from 'lucide-react';
 
 interface MapLayer {
   id: string;
@@ -31,6 +31,8 @@ const mockProjects: ProjectMarker[] = [
   { id: '3', name: '历史街区保护规划', status: '已完成', leader: '王芳', lat: 31.220416, lng: 121.463701 },
 ];
 
+const satelliteBasemapUrl = `${import.meta.env.BASE_URL}satellite_basemap.png`;
+
 export function MapView() {
   const [layers, setLayers] = useState<MapLayer[]>(mockLayers);
   const [selectedProject, setSelectedProject] = useState<ProjectMarker | null>(null);
@@ -56,7 +58,7 @@ export function MapView() {
         {/* Mock Map - In real implementation, this would be Leaflet or Mapbox */}
         <div className="w-full h-full relative overflow-hidden">
           <img
-            src="/satellite_basemap.png"
+            src={satelliteBasemapUrl}
             alt="Satellite Base Map"
             className="w-full h-full object-cover"
           />

@@ -8,4 +8,16 @@
   Run `npm i` to install the dependencies.
 
   Run `npm run dev` to start the development server.
+
+  ## Build
+
+  Run `npm run build` to generate the production files into the `build` directory.
+
+  ## GitHub Pages
+
+  This project is configured for GitHub Pages deployment on the `master` branch through GitHub Actions.
+
+  After pushing to `https://github.com/evilmuscle/gis-system`, the site will be published at:
+
+  `https://evilmuscle.github.io/gis-system/`
   
